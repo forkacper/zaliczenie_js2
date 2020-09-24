@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-12">
+    <h2>Usuwanie Gist'a</h2>
+  </div>
+  <div class="col-6">
+    <form>
+      <div class="form-group">
+        <label>Wprowadź ID Gist'a którego chcesz usunąć:</label>
+        <input type="text" class="form-control" name="idGist" placeholder="Wprowadź id gist'a..." required [(ngModel)]="idGist">
+        <small>*Wartość wymagana</small>
+      </div>
+      <div class="form-group">
+        <label>Czy na pewno chcesz usunąć tego Gist'a?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="prywatnyGist" [(ngModel)]="chechboxDeleteGist">
+          <label class="form-check-label">Tak</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="usunGista()">Usuń Gist'a!</button>
+      {{deleteGist | async | json}}
+    </form>
+  </div>
+</div>

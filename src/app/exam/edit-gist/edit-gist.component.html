@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-12">
+    <h2>Edycja gist'a</h2>
+  </div>
+  <div class="col-6">
+    <form>
+      <div class="form-group">
+        <label>Wprowadź ID Gist'a którego chcesz edytować:</label>
+        <input type="text" class="form-control" name="idGist" placeholder="Wprowadź id gist'a..." required [(ngModel)]="idGist">
+        <small>*Wartość wymagana</small>
+      </div>
+      <div class="form-group">
+        <label>Opis gist'a:</label>
+        <input type="text" class="form-control" name="opisGist" placeholder="Podaj nowy opis gista..." required [(ngModel)]="opisGist">
+<!--        <small>*Wartość wymagana</small>-->
+      </div>
+      <div class="form-group">
+        <label>Nazwa pliku który chcesz edytować:</label>
+        <input type="text" class="form-control" name="nazwaPliku" placeholder="Podaj nazwę pliku do edycji..." required [(ngModel)]="nazwaPliku">
+        <small>Jeżeli brak zostatnie dodany nowy plik.</small>
+      </div>
+      <div class="form-group">
+        <label>Nazwa pliku:</label>
+        <input type="text" class="form-control" name="nazwaPliku" placeholder="Podaj nową nazwę pliku..." required [(ngModel)]="nazwaPliku2">
+<!--        <small>*Wartość wymagana</small>-->
+      </div>
+      <div class="form-group">
+        <label>Zawartość pliku:</label>
+        <textarea class="form-control" name="zawartoscPliku" placeholder="Wprowadź nową zawartość pliku..." rows="3" required [(ngModel)]="zawartoscPliku"></textarea>
+<!--        <small>*Wartość wymagana</small>-->
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="editGist()">Edytuj Gist'a!</button>
+      {{newGist | async | json}}
+    </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-12">
+  <h2>Tworzenie gist'a z jednym plikiem</h2>
+  </div>
+  <div class="col-6">
+    <form>
+      <div class="form-group">
+        <label>Opis Gista:</label>
+        <input type="text" class="form-control" name="opisGist" placeholder="Wprowadź opis gist'a..." required [(ngModel)]="opisGist">
+        <small>*Wartość wymagana</small>
+      </div>
+      <div class="form-group">
+        <label>Nazwa pliku:</label>
+        <input type="text" class="form-control" name="nazwaPliku" placeholder="Podaj nazwę pliku..." required [(ngModel)]="nazwaPliku">
+        <small></small>
+      </div>
+      <div class="form-group">
+        <label>Zawartość pliku:</label>
+        <textarea class="form-control" name="nazwaPliku" placeholder="Wprowadź zawartość pliku..." rows="3" required [(ngModel)]="zawartoscPliku"></textarea>
+        <small>*Wartość wymagana</small>
+      </div>
+      <div class="form-group">
+        <label>Czy gist ma być publiczny?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="prywatnyGist" [(ngModel)]="publicznyGist">
+          <label class="form-check-label">Tak</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="createGist()">Utwórz Gist'a!</button>
+      {{ newGist | async | json }}
+    </form>
+  </div>
+</div>
